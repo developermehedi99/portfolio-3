@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mahadi — Portfolio</title>
+  <meta name="description" content="Personal portfolio — Developer / Designer" />
+  <link rel="stylesheet" href="style.css">
+  <!-- Tailwind Play CDN (quick for prototype). For production use a proper build. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="antialiased text-slate-800 bg-slate-50">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">M</div>
+          <span class="font-semibold text-lg">Mahadi</span>
+        </a>
+
+        <nav id="nav" class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a class="hover:text-indigo-600" href="#home">Home</a>
+          <a class="hover:text-indigo-600" href="#skills">Skills</a>
+          <a class="hover:text-indigo-600" href="#services">Services</a>
+          <a class="hover:text-indigo-600" href="#works">Work</a>
+          <a class="hover:text-indigo-600" href="#contact">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="hidden md:inline-block bg-indigo-600 text-white px-4 py-2 rounded-md text-sm">Hire me</a>
+
+          <!-- Mobile menu button -->
+          <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-100" aria-label="Toggle menu">
+            <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="md:hidden hidden border-t bg-white">
+      <div class="px-4 pt-4 pb-6 space-y-2">
+        <a class="block px-3 py-2 rounded hover:bg-slate-50" href="#home">Home</a>
+        <a class="block px-3 py-2 rounded hover:bg-slate-50" href="#skills">Skills</a>
+        <a class="block px-3 py-2 rounded hover:bg-slate-50" href="#services">Services</a>
+        <a class="block px-3 py-2 rounded hover:bg-slate-50" href="#works">Work</a>
+        <a class="block px-3 py-2 rounded hover:bg-slate-50" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / Slider -->
+  <section id="home" class="hero-slide relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-12">
+
+        <!-- Slider left -->
+        <div class="space-y-6">
+          <div id="slides" class="relative">
+            <!-- slide 1 -->
+            <article class="slide active bg-white rounded-2xl p-6 shadow-lg">
+              <h1 class="text-3xl sm:text-4xl font-extrabold">Hi, I'm <span class="text-indigo-600">Mahadi</span></h1>
+              <p class="mt-3 text-slate-600">Frontend developer & thumbnail designer. I build responsive websites and eye-catching visuals that convert.</p>
+              <div class="mt-6 flex gap-3">
+                <a href="#contact" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md">Contact me</a>
+                <a href="#works" class="inline-block border border-slate-200 px-4 py-2 rounded-md">View work</a>
+              </div>
+            </article>
+
+            <!-- slide 2 -->
+            <article class="slide hidden bg-white rounded-2xl p-6 shadow-lg">
+              <h2 class="text-3xl sm:text-4xl font-extrabold">I design thumbnails that get clicks</h2>
+              <p class="mt-3 text-slate-600">YouTube thumbnails, social banners, and quick visual notes — optimized for CTR and brand fit.</p>
+              <div class="mt-6 flex gap-3">
+                <a href="#services" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md">See services</a>
+                <a href="#skills" class="inline-block border border-slate-200 px-4 py-2 rounded-md">My skills</a>
+              </div>
+            </article>
+
+            <!-- slide 3 -->
+            <article class="slide hidden bg-white rounded-2xl p-6 shadow-lg">
+              <h2 class="text-3xl sm:text-4xl font-extrabold">Let's build something great</h2>
+              <p class="mt-3 text-slate-600">Websites, branding, and ongoing design support — together we ship products your users love.</p>
+              <div class="mt-6 flex gap-3">
+                <a href="#contact" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md">Start a project</a>
+                <a href="#works" class="inline-block border border-slate-200 px-4 py-2 rounded-md">Portfolio</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- slider controls -->
+          <div class="flex items-center gap-3 mt-4">
+            <button id="prev" class="p-2 rounded-md hover:bg-slate-100" aria-label="Previous">◀</button>
+            <div id="dots" class="flex gap-2"></div>
+            <button id="next" class="p-2 rounded-md hover:bg-slate-100" aria-label="Next">▶</button>
+          </div>
+        </div>
+
+        <!-- Hero image right -->
+        <div class="order-first lg:order-last">
+          <div class="rounded-2xl overflow-hidden shadow-lg">
+            <!-- <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1200&q=60" alt="work desk" class="w-full h-64 object-cover sm:h-80 lg:h-full"/> -->
+            <img src="./image/mehedi hasan rana.jpg" alt="work desk" class="w-full h-64 object-cover sm:h-80 lg:h-full"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h3 class="text-indigo-600 font-semibold">Skills</h3>
+        <h2 class="text-2xl sm:text-3xl font-bold mt-2">What I do</h2>
+        <p class="text-slate-600 mt-2">Front-end development, design and visual storytelling.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-5 rounded-xl shadow">
+          <h4 class="font-semibold">HTML & CSS</h4>
+          <p class="text-sm text-slate-500 mt-2">Semantic markup, responsive layouts, accessibility basics.</p>
+        </div>
+        <div class="bg-white p-5 rounded-xl shadow">
+          <h4 class="font-semibold">JavaScript</h4>
+          <p class="text-sm text-slate-500 mt-2">Vanilla JS, DOM, small interactions and components.</p>
+        </div>
+        <div class="bg-white p-5 rounded-xl shadow">
+          <h4 class="font-semibold">Tailwind CSS</h4>
+          <p class="text-sm text-slate-500 mt-2">Utility-first styling for fast and responsive UI builds.</p>
+        </div>
+        <div class="bg-white p-5 rounded-xl shadow">
+          <h4 class="font-semibold">Design & Thumbnails</h4>
+          <p class="text-sm text-slate-500 mt-2">YouTube thumbnails, banners, and conversion-focused visuals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h3 class="text-indigo-600 font-semibold">Services</h3>
+        <h2 class="text-2xl sm:text-3xl font-bold mt-2">How I can help</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h4 class="font-semibold text-lg">Web Development</h4>
+          <p class="text-slate-500 mt-3">Responsive websites using Tailwind, vanilla JS.
+          <ul class="mt-3 text-sm text-slate-500 list-disc list-inside">
+            <li>Landing pages</li>
+            <li>Portfolio sites</li>
+            <li>Small web apps</li>
+          </ul>
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h4 class="font-semibold text-lg">Thumbnail Design</h4>
+          <p class="text-slate-500 mt-3">High-CTR YouTube thumbnails with clear focal points and readable text.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h4 class="font-semibold text-lg">UI Improvements</h4>
+          <p class="text-slate-500 mt-3">Small UX audits, performance-minded CSS, and accessible components.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work / Experience -->
+  <section id="works" class="py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h3 class="text-indigo-600 font-semibold">Experience</h3>
+        <h2 class="text-2xl sm:text-3xl font-bold mt-2">Selected work</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- card -->
+        <article class="bg-white rounded-lg overflow-hidden shadow">
+          <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=60" alt="project" class="w-full h-40 object-cover"/>
+          <div class="p-4">
+            <h4 class="font-semibold">YouTube Thumbnail Pack</h4>
+            <p class="text-sm text-slate-500 mt-2">Created 50+ thumbnails for a YouTube channel focused on tech explainers.</p>
+            <div class="mt-4 flex items-center justify-between text-sm">
+              <span class="text-slate-500">2025</span>
+              <a href="#contact" class="text-indigo-600">Hire me</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- card 2 -->
+        <article class="bg-white rounded-lg overflow-hidden shadow">
+          <img src="https://images.unsplash.com/photo-1678690832311-bb6e361989ca?auto=format&fit=crop&w=1200&q=60" alt="project" class="w-full h-40 object-cover"/>
+          <div class="p-4">
+            <h4 class="font-semibold">Responsive Portfolio Template</h4>
+            <p class="text-sm text-slate-500 mt-2">Built a reusable HTML + Tailwind template for freelancers.</p>
+            <div class="mt-4 flex items-center justify-between text-sm">
+              <span class="text-slate-500">2024</span>
+              <a href="#contact" class="text-indigo-600">See details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- card 3 -->
+        <article class="bg-white rounded-lg overflow-hidden shadow">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=60" alt="project" class="w-full h-40 object-cover"/>
+          <div class="p-4">
+            <h4 class="font-semibold">Landing Page Redesign</h4>
+            <p class="text-sm text-slate-500 mt-2">Improved conversion by simplifying layout and CTAs.</p>
+            <div class="mt-4 flex items-center justify-between text-sm">
+              <span class="text-slate-500">2023</span>
+              <a href="#contact" class="text-indigo-600">Contact</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-12 bg-indigo-600 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-sm uppercase tracking-wide text-indigo-200">Get in touch</h3>
+          <h2 class="text-2xl sm:text-3xl font-bold mt-2">Let's work together</h2>
+          <p class="mt-3 text-indigo-100">If you like what you see — send a message. I respond within a few hours on business days.</p>
+
+          <ul class="mt-6 space-y-2 text-sm">
+            <li>Email: <a href="mailto:hello@example.com" class="underline">Mehedi@gmail.com</a></li>
+            <li>Location: Rajshahi, Bangladesh</li>
+            <li>Freelance: Available</li>
+          </ul>
+        </div>
+
+        <form class="bg-white rounded-xl p-6 text-slate-800 shadow" action="#" onsubmit="event.preventDefault(); alert('Thank you — message sent (demo).');">
+          <label class="block">
+            <span class="text-sm font-medium">Your name</span>
+            <input required class="mt-2 block w-full rounded-md border-slate-200 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Your name" />
+          </label>
+
+          <label class="block mt-4">
+            <span class="text-sm font-medium">Email</span>
+            <input type="email" required class="mt-2 block w-full rounded-md border-slate-200 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="you@example.com" />
+          </label>
+
+          <label class="block mt-4">
+            <span class="text-sm font-medium">Message</span>
+            <textarea required class="mt-2 block w-full rounded-md border-slate-200 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" rows="4" placeholder="Tell me about your project..."></textarea>
+          </label>
+
+          <div class="mt-4 text-right">
+            <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-slate-600">© <span id="year"></span> Mahadi. All rights reserved.</div>
+      <div class="flex items-center gap-4">
+        <a href="#" class="text-slate-600 hover:text-indigo-600 text-sm">Twitter</a>
+        <a href="#" class="text-slate-600 hover:text-indigo-600 text-sm">LinkedIn</a>
+        <a href="#" class="text-slate-600 hover:text-indigo-600 text-sm">Dribbble</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: menu + slider + year -->
+  <script>
+    // mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const menuIcon = document.getElementById('menuIcon');
+    menuBtn.addEventListener('click', ()=>{
+      mobileNav.classList.toggle('hidden');
+    });
+
+    // slider simple
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const dotsWrap = document.getElementById('dots');
+    let current = 0;
+
+    function showSlide(i){
+      slides.forEach((s, idx)=>{
+        if(idx===i){ s.classList.remove('hidden'); s.classList.add('active'); }
+        else { s.classList.add('hidden'); s.classList.remove('active'); }
+      });
+      updateDots();
+    }
+
+    function nextSlide(){ current = (current + 1) % slides.length; showSlide(current); }
+    function prevSlide(){ current = (current - 1 + slides.length) % slides.length; showSlide(current); }
+
+    document.getElementById('next').addEventListener('click', nextSlide);
+    document.getElementById('prev').addEventListener('click', prevSlide);
+
+    // dots
+    slides.forEach((_, idx)=>{
+      const btn = document.createElement('button');
+      btn.className = 'w-3 h-3 rounded-full border';
+      btn.addEventListener('click', ()=>{ current = idx; showSlide(current); });
+      dotsWrap.appendChild(btn);
+    });
+    function updateDots(){ Array.from(dotsWrap.children).forEach((d, idx)=>{
+      d.style.background = idx===current ? '#4f46e5' : 'transparent';
+    }); }
+
+    showSlide(0);
+    // auto rotate
+    let sliderInterval = setInterval(nextSlide, 5000);
+    // pause on hover
+    document.getElementById('slides').addEventListener('mouseenter', ()=>{ clearInterval(sliderInterval); });
+    document.getElementById('slides').addEventListener('mouseleave', ()=>{ sliderInterval = setInterval(nextSlide, 5000); });
+
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
